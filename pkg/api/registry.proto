@@ -3,7 +3,7 @@ syntax = "proto3";
 package api;
 
 service Registry {
-    rpc ListPackages(ListPackageRequest) returns (stream PackageName) {}
+	rpc ListPackages(ListPackageRequest) returns (stream PackageName) {}
 	rpc GetPackage(GetPackageRequest) returns (Package) {}
 	rpc GetBundle(GetBundleRequest) returns (Bundle) {}
 	rpc GetBundleForChannel(GetBundleInChannelRequest) returns (Bundle) {}
@@ -12,6 +12,7 @@ service Registry {
 	rpc GetChannelEntriesThatProvide(GetAllProvidersRequest) returns (stream ChannelEntry) {}
 	rpc GetLatestChannelEntriesThatProvide(GetLatestProvidersRequest) returns (stream ChannelEntry) {}
 	rpc GetDefaultBundleThatProvides(GetDefaultProviderRequest) returns (Bundle) {}
+	rpc GetCatalogChecksum(GetCatalogChecksumRequest) returns (CatalogChecksum) {}
 }
 
 
@@ -93,3 +94,8 @@ message GetDefaultProviderRequest{
 	string plural = 4;
 }
 
+message GetCatalogChecksumRequest{}
+
+message CatalogChecksum{
+	string checksum = 1;
+}

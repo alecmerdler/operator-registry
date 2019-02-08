@@ -121,3 +121,7 @@ func (s *RegistryServer) GetDefaultBundleThatProvides(ctx context.Context, req *
 	}
 	return api.BundleStringToAPIBundle(bundleString, channelEntry)
 }
+
+func (s *RegistryServer) GetCatalogChecksum(ctx context.Context, req *api.GetCatalogChecksumRequest) (*api.CatalogChecksum, error) {
+	// TODO(alecmerdler): Return checksum of the SQLite database file...
+}
