@@ -100,6 +100,7 @@ func runCmdFunc(cmd *cobra.Command, args []string) error {
 	if err := s.Serve(lis); err != nil {
 		logger.Fatalf("failed to serve: %s", err)
 	}
+	// TODO(alecmerdler): Initialize static file server for logo images...
 
 	return nil
 }

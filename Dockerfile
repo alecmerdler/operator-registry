@@ -41,7 +41,7 @@ RUN chgrp -R 0 /registry && \
 # This image doesn't need to run as root user
 USER 1001
 
-EXPOSE 50051
+EXPOSE 50051, 80
 
 LABEL io.k8s.display-name="OpenShift Operator Registry" \
     io.k8s.description="This is a component of OpenShift Operator Lifecycle Manager and is the base for operator catalog API containers." \
